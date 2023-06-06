@@ -1,7 +1,4 @@
-// const amount = document.getElementById("amount");
-// const rate = document.getElementById("rate");
-// const months = document.getElementById("months");
-// const total = document.getElementById("monthly__payment");
+const months = document.getElementById("months");
 
 function Calculate() {
   const amount = parseFloat(document.getElementById("amount").value);
@@ -15,9 +12,11 @@ function Calculate() {
   document.querySelector("#monthly__payment").innerHTML =
     "Monthly payment:" + total;
 }
-console.log(Calculate);
-// amount.addEventListener("input", Calculate);
-// rate.addEventListener("input", Calculate);
-// months.addEventListener("input", Calculate);
 
-// total.addEventListener("keypress", Calculate);
+months.addEventListener("input", () => {
+  if (months.value) {
+    Calculate();
+  }
+});
+//first line is true and the second one is false
+//=> when we write something in the last input it's calculated the price
